@@ -1,0 +1,67 @@
+*,
+*:is(::before, ::after) {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-family: 'Open Sans', sans-serif;
+   scroll-behavior: smooth;
+}
+
+body {
+   background-color: var(--bg-dash);
+   color: var(--neutra-escura);
+   line-height: 1.8;
+
+   &.nav-active {
+      overflow: hidden;
+   }
+}
+
+li {
+   list-style: none;
+}
+
+a,
+img,
+span,
+input,
+button,
+ion-icon {
+   display: block;
+}
+
+a {
+   color: inherit;
+   text-decoration: none;
+}
+
+img {
+   height: auto;
+}
+
+input,
+button {
+   background: none;
+   border: none;
+   font: inherit;
+}
+
+input {
+   width: 100%;
+   outline: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+ion-icon {
+   pointer-events: none;
+}
+
+address {
+   font-style: normal;
+}
