@@ -37,7 +37,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link">
+                  <a href="#" class="navbar-link active">
                      <img src="./assets/images/icon-write.svg" alt="ícone" class="icon">
                      Dados do Imóvel
                   </a>
@@ -155,7 +155,8 @@
          <div class="container">
 
             <div class="left">
-               <h4>Meu Perfil</h4>
+               <img src="./assets/images/icon-write.svg" alt="" class="icon">
+               <h4>Dados do imóvel</h4>
             </div>
 
             <div class="right">
@@ -168,94 +169,116 @@
          </div>
       </div>
 
-      <form action="" class="container double-form">
+      <form action="" class="container">
 
-         <div class="profile">
-            <div class="profile-pic">
+         <fieldset>
+            <legend>Dados Gerais</legend>
 
-               <img src="./assets/images/icon-profile-pic.svg" alt="" class="profile-image">
+            <div class="input-group">
+               <label for="">
+                  Nome (que você quer que apareça em destaque)
+                  <input type="text">
+               </label>
 
-               <div class="edit-pic">
-                  <img src="./assets/images/icon-pencil.svg" alt="ícone editar" class="icon">
-               </div>
-
-               <input type="file" name="arquivo" id="">
+               <label for="">
+                  Tipo do Imóvel
+                  <input type="text">
+               </label>
             </div>
 
-            <h2 class="profile-name">Marlon Seolin</h2>
-            <p class="profile-city">Maringá - PR</p>
+         </fieldset>
 
-            <div class="profile-sections">
-               <a href="#" class="active">
-                  Alterar dados cadastrais
+         <fieldset>
+            <legend>Endereço</legend>
 
-                  <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="" stroke-width="2.00252"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-               </a>
-
-               <a href="#" class="">
-                  Todos os anúncios
-
-                  <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="#404041" stroke-width="2.00252"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-               </a>
-            </div>
-         </div>
-
-         <div class="profile-info">
-            <fieldset>
-               <legend>Alterar dados cadastrais</legend>
-
-               <div class="form-group">
-                  <div class="input-group">
-                     <label for="">
-                        Nome
-                        <input type="text">
-                     </label>
-
-                     <label for="">
-                        Sobrenome
-                        <input type="text">
-                     </label>
-                  </div>
+            <div class="form-group">
+               <div class="input-group">
+                  <label>
+                     Rua e Número
+                     <input type="text" placeholder="ex: lindo imóvel residencial na Zona 03">
+                  </label>
 
                   <label>
-                     Telefone
+                     Bairro
                      <input type="text">
                   </label>
-
-                  <label>
-                     E-mail
-                     <input type="email">
-                  </label>
-
-                  <label>
-                     Senha
-                     <input type="password">
-                  </label>
-
-                  <label>
-                     Confirme a senha
-                     <input type="password">
-                  </label>
-
-
                </div>
 
-            </fieldset>           
+               <label>
+                  Cidade
+                  <input type="text">
+               </label>
 
-            <button type="submit" class="btn submit">Atualizar</button>
-         </div>
+               <label>
+                  Localização (Iframe do mapa)
+                  <input type="text">
+               </label>
 
-         <div class="profile-ads">
-            
-         </div>
+               <label>
+                  Coordenadas (Iframe do mapa)
+                  <input type="text">
+               </label>
+            </div>
+
+         </fieldset>
+
+         <fieldset>
+
+            <legend>Descrição</legend>
+
+            <p>Breve Descrição de Apresentação</p>
+
+            <textarea name="" id="" cols="30" rows="10">
+
+            </textarea>
 
 
+            <p>Descrição Completa</p>
+
+            <textarea name="" id="" cols="30" rows="10">
+
+            </textarea>
+
+         </fieldset>
+
+         <fieldset class="fs-valores">
+            <legend>Valores</legend>
+
+            <div class="form-group">
+               <label class="cifrao">
+                  Aluguel 
+                  <button type="button" class="btn-dynamic delete">
+                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                     Excluir
+                  </button>
+                  <input type="text">
+               </label>
+               <label class="cifrao">
+                  Aluguel 
+                  <button type="button" class="btn-dynamic delete">
+                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                     Excluir
+                  </button>
+                  <input type="text">
+               </label>
+               <label class="cifrao">
+                  Aluguel 
+                  <button type="button" class="btn-dynamic delete">
+                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                     Excluir
+                  </button>
+                  <input type="text">
+               </label>
+            </div>
+
+            <button type="button" class="btn-dynamic add">
+               <img src="./assets/images/icon-plus.svg" alt="ícone mais"> 
+               adicionar novo campo
+            </button>
+
+         </fieldset>
+
+         <button type="submit" class="btn submit">Salvar e atualizar</button>
       </form>
 
    </main>
