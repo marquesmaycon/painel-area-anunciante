@@ -1,10 +1,21 @@
+@use "./mixings" as mx;
+
 .header {
    position: fixed;
    top: 0;
-   left: 0;
+   left: -402px;
    width: 402px;
    height: 100vh;
-   z-index: 5;  
+   transition: all 300ms ease;
+   z-index: 5;
+
+   &.active {
+      left: 0px;
+   }
+
+   @include mx.breakpoint-up(large) {
+      left: 0px;
+   }
 
    .content {
       display: flex;
@@ -14,6 +25,28 @@
       background-image: var(--gradient);
       color: var(--branco);
       box-shadow: var(--box-shadow-3);
+
+      .top {
+         position: relative;
+
+         .close-nav {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+
+            @include mx.breakpoint-up(large) {
+               display: none;
+            }
+         }
+
+         .icon {
+            width: 16px;
+
+            path {
+               stroke: #FFF;
+            }
+         }
+      }
 
       .logo {
          margin: 12px auto 48px;
@@ -53,8 +86,20 @@
             overflow-y: scroll;
             padding-block-end: 124px;
 
+            // direction: rtl;
+
             &::-webkit-scrollbar {
                width: 0px;
+               background-color: none;
+            }
+
+            &::-webkit-scrollbar-thumb {
+               background-color: #AB2F34;
+               border-radius: 5px;
+            }
+
+            li {
+               // direction: ltr;
             }
          }
 
@@ -77,5 +122,19 @@
             }
          }
       }
+   }
+}
+
+.overlay {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   display: none;
+   background: #00000014;
+   filter: blur(10px);
+   z-index: 3;
+
+   &.active {
+      display: block;
    }
 }

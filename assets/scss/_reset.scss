@@ -18,6 +18,10 @@ body {
    &.nav-active {
       overflow: hidden;
    }
+
+   &.modal-active {
+      overflow: hidden;
+   }
 }
 
 li {

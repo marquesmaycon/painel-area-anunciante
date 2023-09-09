@@ -1,0 +1,108 @@
+.ads {
+   display: none;
+
+   &.active {
+      display: block;
+   }
+
+   &-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+   }
+
+   &-item {
+      display: flex;
+      align-items: center;
+      height: 226px;
+      width: 547px;
+      background-color: #FFF;
+      border-radius: var(--radius2);
+      overflow: hidden;
+   }
+
+   &-swiper {
+      width: 236px;
+
+      .swiper-slide {
+         border-radius: var(--radius2);
+      }
+
+      .swiper-pagination-bullet {
+         margin: 0 2.5px !important;
+         height: 5px;
+         width: 5px;
+         background: #D6D6D6;
+         opacity: .9;
+
+         &-active {
+            background: white;
+         }
+      }
+   }
+
+   &-info {
+      padding: 24px 20px;
+      width: 311px;
+      line-height: 15.781px;
+
+   }
+
+   &-category {
+      color: var(--neutra-cinza-escuro-2);
+      font-size: 14px;
+   }
+
+   &-title {
+      font-size: 18px;
+      font-weight: 500;
+      margin-block: 9px 5px;
+   }
+
+   &-city {
+      font-size: 14px;
+      font-weight: 500;
+   }
+
+   &-benefits {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 16px;
+      margin-block: 20px 30px;
+      color: var(--neutra-cinza-escuro-2);
+      font-size: 12px;
+      font-weight: 400;
+
+      li {
+         position: relative;
+
+         &:not(:last-child)::before {
+            position: absolute;
+            content: "•";
+            color: var(--neutra-cinza-escuro);
+            font-weight: 800;
+            right: -10px;
+         }
+      }
+   }
+
+   &-investment {
+      display: flex;
+      align-items: flex-end;
+      margin-block-end: 20px;
+      font-size: 14px;
+      font-weight: 400;
+   }
+
+   &-price {
+      font-size: 20px;
+      font-weight: 700;
+   }
+
+   &-favorite {
+
+      .icon {
+         width: 15px;
+      }
+   }
+}

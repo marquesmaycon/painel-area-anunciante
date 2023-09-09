@@ -4,18 +4,37 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- font -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
+
+   <!-- styles -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
    <link rel="stylesheet" href="./assets/css/style.css">
+
+   <!-- scripts -->
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
+   <script src="./assets/js/script.js" defer></script>
+
    <title>Document</title>
 </head>
 
 <body>
-   <header class="header">
+   <header class="header" data-header>
       <div class="content">
          <div class="top">
+            <button type="button" class="close-nav" data-nav-toggler>
+               <svg class="icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Group 87">
+                     <path id="Vector 10" d="M1 1L10 9.9961" stroke="#404041" stroke-width="2" stroke-linecap="round" />
+                     <path id="Vector 11" d="M1 10L10 1.0039" stroke="#404041" stroke-width="2"
+                        stroke-linecap="round" />
+                  </g>
+               </svg>
+            </button>
             <img src="./assets/images/logo.png" width="160" height="97" alt="logo" class="logo">
 
             <div class="selects">
@@ -37,7 +56,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link active">
+                  <a href="./dados-do-imovel.html" class="navbar-link active">
                      <img src="./assets/images/icon-write.svg" alt="ícone" class="icon">
                      Dados do Imóvel
                   </a>
@@ -150,6 +169,8 @@
       </div>
    </header>
 
+   <div class="overlay" data-overlay data-nav-toggler></div>
+
    <main class="main">
       <div class="top-bar">
          <div class="container">
@@ -159,129 +180,228 @@
                <h4>Dados do imóvel</h4>
             </div>
 
+            <div class="mobile-menu">
+               <button type="button" data-nav-toggler>
+                  <img src="./assets/images/icon-hamburger-menu.svg" alt="icone menu" class="icon">
+               </button>
+               <a href="#"><img src="assets/images/logo.png" alt="logo" class="logo"></a>
+            </div>
+
             <div class="right">
-               <div class="notification">
-                  <img src="./assets/images/icon-bell.svg" alt="ícone sino" class="icon">
+               <div class="notification active" data-dialog-btn data-target="notification">
+                  <svg class="icon" width="20" height="22" viewBox="0 0 20 22" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M16.7491 8.70957V8.00497C16.7491 4.13623 13.7274 1 10 1C6.27256 1 3.25087 4.13623 3.25087 8.00497V8.70957C3.25087 9.5552 3.00972 10.3818 2.5578 11.0854L1.45036 12.8095C0.438821 14.3843 1.21105 16.5249 2.97036 17.0229C7.57274 18.3257 12.4273 18.3257 17.0296 17.0229C18.789 16.5249 19.5612 14.3843 18.5496 12.8095L17.4422 11.0854C16.9903 10.3818 16.7491 9.5552 16.7491 8.70957Z"
+                        stroke="#404041" stroke-width="1.5" />
+                     <path d="M5.5 18C6.15503 19.7478 7.92246 21 10 21C12.0775 21 13.845 19.7478 14.5 18"
+                        stroke="#404041" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
                </div>
-               <img src="./assets/images/icon-profile-pic.svg" alt="ícone perfil" class="icon-profile">
+               <img src="./assets/images/icon-profile-pic.svg" alt="ícone perfil" class="icon-profile" data-dialog-btn
+                  data-target="profile-popup">
             </div>
 
          </div>
       </div>
 
-      <form action="" class="container">
+      <div class="container">
+         <form action="">
 
-         <fieldset>
-            <legend>Dados Gerais</legend>
-
-            <div class="input-group">
-               <label for="">
-                  Nome (que você quer que apareça em destaque)
-                  <input type="text">
-               </label>
-
-               <label for="">
-                  Tipo do Imóvel
-                  <input type="text">
-               </label>
+            <div class="title-section">
+               <img src="./assets/images/icon-write.svg" alt="icone dados" class="icon">
+               Dados do imóvel
             </div>
 
-         </fieldset>
+            <fieldset>
+               <legend>Dados Gerais</legend>
 
-         <fieldset>
-            <legend>Endereço</legend>
-
-            <div class="form-group">
                <div class="input-group">
-                  <label>
-                     Rua e Número
-                     <input type="text" placeholder="ex: lindo imóvel residencial na Zona 03">
+                  <label for="">
+                     Nome (que você quer que apareça em destaque)
+                     <input type="text">
                   </label>
 
-                  <label>
-                     Bairro
+                  <label for="">
+                     Tipo do Imóvel
                      <input type="text">
                   </label>
                </div>
 
-               <label>
-                  Cidade
-                  <input type="text">
-               </label>
+            </fieldset>
+
+            <fieldset>
+               <legend>Endereço</legend>
+
+               <div class="form-group">
+                  <div class="input-group">
+                     <label>
+                        Rua e Número
+                        <input type="text" placeholder="ex: lindo imóvel residencial na Zona 03">
+                     </label>
+
+                     <label>
+                        Bairro
+                        <input type="text">
+                     </label>
+                  </div>
+
+                  <label>
+                     Cidade
+                     <input type="text">
+                  </label>
+
+                  <label>
+                     Localização (Iframe do mapa)
+                     <input type="text">
+                  </label>
+
+                  <label>
+                     Coordenadas (Iframe do mapa)
+                     <input type="text">
+                  </label>
+               </div>
+
+            </fieldset>
+
+            <fieldset>
+
+               <legend>Descrição</legend>
 
                <label>
-                  Localização (Iframe do mapa)
-                  <input type="text">
+                  Breve Descrição de Apresentação
+                  <textarea name="" id="" cols="30" rows="10" class="text-mce">
+
+                  </textarea>
                </label>
 
                <label>
-                  Coordenadas (Iframe do mapa)
-                  <input type="text">
+                  Descrição Completa
+                  <textarea name="" id="" cols="30" rows="10" class="text-mce">
+
+                  </textarea>
                </label>
-            </div>
 
-         </fieldset>
+            </fieldset>
 
-         <fieldset>
+            <fieldset class="fs-valores">
+               <legend>Valores</legend>
 
-            <legend>Descrição</legend>
+               <div class="form-group" data-valores-container>
+                  <label class="cifrao">
+                     Aluguel                     
+                     <input type="text">
+                  </label>
+                  <label class="cifrao">
+                     Aluguel 2
+                     <button type="button" class="btn-dynamic delete" data-delete-field>
+                        <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                        Excluir
+                     </button>
+                     <input type="text">
+                  </label>
+                  <label class="cifrao">
+                     Aluguel 3
+                     <button type="button" class="btn-dynamic delete" data-delete-field>
+                        <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                        Excluir
+                     </button>
+                     <input type="text">
+                  </label>
+               </div>
 
-            <p>Breve Descrição de Apresentação</p>
+               <button type="button" class="btn-dynamic add" data-dialog-btn data-target="adicionar-campo">
+                  <img src="./assets/images/icon-plus.svg" alt="ícone mais">
+                  adicionar novo campo
+               </button>
 
-            <textarea name="" id="" cols="30" rows="10">
+            </fieldset>
 
-            </textarea>
-
-
-            <p>Descrição Completa</p>
-
-            <textarea name="" id="" cols="30" rows="10">
-
-            </textarea>
-
-         </fieldset>
-
-         <fieldset class="fs-valores">
-            <legend>Valores</legend>
-
-            <div class="form-group">
-               <label class="cifrao">
-                  Aluguel 
-                  <button type="button" class="btn-dynamic delete">
-                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
-                     Excluir
-                  </button>
-                  <input type="text">
-               </label>
-               <label class="cifrao">
-                  Aluguel 
-                  <button type="button" class="btn-dynamic delete">
-                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
-                     Excluir
-                  </button>
-                  <input type="text">
-               </label>
-               <label class="cifrao">
-                  Aluguel 
-                  <button type="button" class="btn-dynamic delete">
-                     <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
-                     Excluir
-                  </button>
-                  <input type="text">
-               </label>
-            </div>
-
-            <button type="button" class="btn-dynamic add">
-               <img src="./assets/images/icon-plus.svg" alt="ícone mais"> 
-               adicionar novo campo
-            </button>
-
-         </fieldset>
-
-         <button type="submit" class="btn submit">Salvar e atualizar</button>
-      </form>
+            <button type="submit" class="btn submit">Salvar e atualizar</button>
+         </form>
+      </div>
 
    </main>
+
+   <dialog class="dialog" data-dialog="adicionar-campo">
+      <div class="content">
+         <button class="dialog-close" data-dialog-close>
+            <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+         </button>
+
+         <h3>Adicionar novo campo</h3>
+
+         <label>
+            Título do campo <b class="dialog-msg" data-label-msg>(Teste de mensagem!)</b>
+            <input type="text" name="titulo-campo" placeholder="ex: da Silva">
+         </label>
+
+         <button type="button" class="btn submit" data-add-valor>Adicionar</button>
+      </div>
+   </dialog>
+
+   <footer>
+      <dialog class="dialog popup" data-dialog="profile-popup">
+         <div class="content">
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Olá, Marlon Seolin!</h3>
+
+            <div class="popup-body">
+               <a href="./index.html" class="popup-item">
+                  Meu perfil
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+               <a href="#" class="popup-item">
+                  <span class="has-icon">
+                     <img src="./assets/images/icon-door.svg" alt="exit door">
+                     Sair
+                  </span>
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+            </div>
+         </div>
+      </dialog>
+
+      <dialog class="dialog popup notification" data-dialog="notification">
+         <div class="content">
+
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Notificações</h3>
+
+            <ul>
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+            </ul>
+
+
+         </div>
+      </dialog>
+   </footer>
+
 </body>
 
 </html>

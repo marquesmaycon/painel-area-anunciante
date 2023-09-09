@@ -8,14 +8,34 @@
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
+   <!-- styles -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
    <link rel="stylesheet" href="./assets/css/style.css">
+
+   <!-- scripts -->
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+      <!-- custom script -->
+   <script src="./assets/js/script.js" defer></script>
+
    <title>Document</title>
 </head>
 
 <body>
-   <header class="header">
+   <header class="header" data-header>
       <div class="content">
          <div class="top">
+            <button type="button" class="close-nav" data-nav-toggler>
+               <svg class="icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Group 87">
+                     <path id="Vector 10" d="M1 1L10 9.9961" stroke="#404041" stroke-width="2" stroke-linecap="round" />
+                     <path id="Vector 11" d="M1 10L10 1.0039" stroke="#404041" stroke-width="2"
+                        stroke-linecap="round" />
+                  </g>
+               </svg>
+            </button>
             <img src="./assets/images/logo.png" width="160" height="97" alt="logo" class="logo">
 
             <div class="selects">
@@ -37,7 +57,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link">
+                  <a href="./dados-do-imovel.html" class="navbar-link">
                      <img src="./assets/images/icon-write.svg" alt="ícone" class="icon">
                      Dados do Imóvel
                   </a>
@@ -150,65 +170,83 @@
       </div>
    </header>
 
+   <div class="overlay" data-overlay data-nav-toggler></div>
+
    <main class="main">
       <div class="top-bar">
          <div class="container">
 
             <div class="left">
-               <h4>Meu Perfil</h4>
+               <img src="./assets/images/icon-write.svg" alt="" class="icon">
+               <h4>Dados do imóvel</h4>
+            </div>
+
+            <div class="mobile-menu">
+               <button type="button" data-nav-toggler>
+                  <img src="./assets/images/icon-hamburger-menu.svg" alt="icone menu" class="icon">
+               </button>
+               <a href="#"><img src="assets/images/logo.png" alt="logo" class="logo"></a>
             </div>
 
             <div class="right">
-               <div class="notification">
-                  <img src="./assets/images/icon-bell.svg" alt="ícone sino" class="icon">
+               <div class="notification active" data-dialog-btn data-target="notification">
+                  <svg class="icon" width="20" height="22" viewBox="0 0 20 22" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M16.7491 8.70957V8.00497C16.7491 4.13623 13.7274 1 10 1C6.27256 1 3.25087 4.13623 3.25087 8.00497V8.70957C3.25087 9.5552 3.00972 10.3818 2.5578 11.0854L1.45036 12.8095C0.438821 14.3843 1.21105 16.5249 2.97036 17.0229C7.57274 18.3257 12.4273 18.3257 17.0296 17.0229C18.789 16.5249 19.5612 14.3843 18.5496 12.8095L17.4422 11.0854C16.9903 10.3818 16.7491 9.5552 16.7491 8.70957Z"
+                        stroke="#404041" stroke-width="1.5" />
+                     <path d="M5.5 18C6.15503 19.7478 7.92246 21 10 21C12.0775 21 13.845 19.7478 14.5 18"
+                        stroke="#404041" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
                </div>
-               <img src="./assets/images/icon-profile-pic.svg" alt="ícone perfil" class="icon-profile">
+               <img src="./assets/images/icon-profile-pic.svg" alt="ícone perfil" class="icon-profile" data-dialog-btn
+                  data-target="profile-popup">
             </div>
 
          </div>
       </div>
 
-      <form action="" class="container double-form">
+      <form action="" class="container double-form" data-profile-form>
 
          <div class="profile">
             <div class="profile-pic">
 
-               <img src="./assets/images/icon-profile-pic.svg" alt="" class="profile-image">
+               <img src="./assets/images/icon-profile-pic.svg" alt="" class="profile-image" data-profile-pic>
 
-               <div class="edit-pic">
+               <button type="button" class="edit-pic" data-img-btn>
                   <img src="./assets/images/icon-pencil.svg" alt="ícone editar" class="icon">
-               </div>
+               </button>
 
-               <input type="file" name="arquivo" id="">
+               <input type="file" name="arquivo" data-input-img>
             </div>
 
             <h2 class="profile-name">Marlon Seolin</h2>
             <p class="profile-city">Maringá - PR</p>
 
             <div class="profile-sections">
-               <a href="#" class="active">
+               <button type="button" class="section active" data-section-btn="infos">
                   Alterar dados cadastrais
 
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="" stroke-width="2.00252"
                         stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-               </a>
+               </button>
 
-               <a href="#" class="">
+               <button type="button" class="section" data-section-btn="ads">
                   Todos os anúncios
 
                   <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                      <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="#404041" stroke-width="2.00252"
                         stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-               </a>
+               </button>
             </div>
          </div>
 
-         <div class="profile-info">
+         <div class="profile-info active" data-profile="infos">
             <fieldset>
-               <legend>Alterar dados cadastrais</legend>
+               <legend class="section-title">Alterar dados cadastrais</legend>
 
                <div class="form-group">
                   <div class="input-group">
@@ -246,19 +284,264 @@
 
                </div>
 
-            </fieldset>           
+            </fieldset>
 
             <button type="submit" class="btn submit">Atualizar</button>
          </div>
 
-         <div class="profile-ads">
-            
+         <div class="ads" data-profile="ads">
+            <h1 class="section-title">Todos os anúncios</h1>
+
+            <ul class="ads-list">
+               <li class="ads-item">
+
+                  <div class="swiper ads-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                  </div>
+
+                  <a href="#" class="ads-info">
+                     <p class="ads-category">chácara</p>
+                     <h4 class="ads-title">Recanto Remape</h4>
+                     <p class="ads-city">Maringá-PR</p>
+
+                     <ul class="ads-benefits">
+                        <li>Churrasqueira</li>
+                        <li>Estacionamento</li>
+                        <li>Sala de TV</li>
+                     </ul>
+
+                     <div class="ads-investment">
+                        <h3 class="ads-price">R$600</h3>
+                        /diária
+                     </div>
+
+                     <span class="ads-favorite">
+                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
+                     </span>
+
+                  </a>
+               </li>
+               <li class="ads-item">
+
+                  <div class="swiper ads-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                  </div>
+
+                  <a href="#" class="ads-info">
+                     <p class="ads-category">chácara</p>
+                     <h4 class="ads-title">Recanto Remape</h4>
+                     <p class="ads-city">Maringá-PR</p>
+
+                     <ul class="ads-benefits">
+                        <li>Churrasqueira</li>
+                        <li>Estacionamento</li>
+                        <li>Sala de TV</li>
+                     </ul>
+
+                     <div class="ads-investment">
+                        <h3 class="ads-price">R$600</h3>
+                        /diária
+                     </div>
+
+                     <span class="ads-favorite">
+                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
+                     </span>
+
+                  </a>
+               </li>
+               <li class="ads-item">
+
+                  <div class="swiper ads-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                  </div>
+
+                  <a href="#" class="ads-info">
+                     <p class="ads-category">chácara</p>
+                     <h4 class="ads-title">Recanto Remape</h4>
+                     <p class="ads-city">Maringá-PR</p>
+
+                     <ul class="ads-benefits">
+                        <li>Churrasqueira</li>
+                        <li>Estacionamento</li>
+                        <li>Sala de TV</li>
+                     </ul>
+
+                     <div class="ads-investment">
+                        <h3 class="ads-price">R$600</h3>
+                        /diária
+                     </div>
+
+                     <span class="ads-favorite">
+                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
+                     </span>
+
+                  </a>
+               </li>
+               <li class="ads-item">
+
+                  <div class="swiper ads-swiper">
+                     <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                        <div class="swiper-slide">
+                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
+                        </div>
+                     </div>
+                     <div class="swiper-pagination"></div>
+                  </div>
+
+                  <a href="#" class="ads-info">
+                     <p class="ads-category">chácara</p>
+                     <h4 class="ads-title">Recanto Remape</h4>
+                     <p class="ads-city">Maringá-PR</p>
+
+                     <ul class="ads-benefits">
+                        <li>Churrasqueira</li>
+                        <li>Estacionamento</li>
+                        <li>Sala de TV</li>
+                     </ul>
+
+                     <div class="ads-investment">
+                        <h3 class="ads-price">R$600</h3>
+                        /diária
+                     </div>
+
+                     <span class="ads-favorite">
+                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
+                     </span>
+
+                  </a>
+               </li>
+            </ul>
          </div>
 
 
       </form>
 
    </main>
+
+   <footer>
+      <dialog class="dialog popup" data-dialog="profile-popup">
+         <div class="content">
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Olá, Marlon Seolin!</h3>
+
+            <div class="popup-body">
+               <a href="./index.html" class="popup-item">
+                  Meu perfil
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+               <a href="#" class="popup-item">
+                  <span class="has-icon">
+                     <img src="./assets/images/icon-door.svg" alt="exit door">
+                     Sair
+                  </span>
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+            </div>
+         </div>
+      </dialog>
+
+      <dialog class="dialog popup notification" data-dialog="notification">
+         <div class="content">
+
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Notificações</h3>
+
+            <ul>
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+            </ul>
+
+
+         </div>
+      </dialog>
+   </footer>
 </body>
 
 </html>

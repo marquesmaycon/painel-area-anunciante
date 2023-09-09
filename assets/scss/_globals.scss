@@ -1,3 +1,5 @@
+@use "./mixings" as mx;
+
 .icon {
    width: 28px;
    aspect-ratio: 1;
@@ -6,11 +8,15 @@
 
 .container {
    padding: 18px 50px;
+
+   @include mx.breakpoint-down(medium) {
+      padding: 27px 20px;
+   }
 }
 
 .btn {
    padding-block: 20px;
-   width: 361px;
+   width: min(100%, 361px);
    color: var(--branco);
    border-radius: var(--radius1);
    background: var(--primaria);
@@ -19,7 +25,6 @@
       font-size: 16px;
       font-weight: 700;
       line-height: 19.985px;
-      /* 124.906% */
       letter-spacing: -0.64px;
    }
 
@@ -59,10 +64,29 @@
    }
 }
 
+.has-icon {
+   display: flex;
+   align-items: center;
+   gap: 10px;
+}
+
+.section-title {
+   margin-block-end: 28px;
+   font-size: 24px;
+   font-weight: 700;
+   line-height: 21px;
+}
+
 .main {
    position: relative;
-   left: 390px;
+   left: 375px;
    width: calc(100vw - var(--navbar-width));
+   transition: all 300ms ease;
+
+   @include mx.breakpoint-down(medium) {
+      width: 100%;
+      left: 0;
+   }
 
    .top-bar {
       position: sticky;
@@ -70,11 +94,20 @@
       background-color: var(--branco);
       z-index: 3;
 
+      @include mx.breakpoint-down (medium) {
+         background-image: var(--gradient);
+      }
+
       .container {
          display: flex;
          align-items: center;
          justify-content: space-between;
          gap: 64px;
+
+         @include mx.breakpoint-down(medium) {
+            padding: 10px 20px;
+            gap: 16px;
+         }
       }
 
       .left {
@@ -82,8 +115,30 @@
          align-items: center;
          gap: 20px;
 
+         @include mx.breakpoint-down (medium) {
+            display: none;
+         }
+
          .icon {
             filter: invert(100%);
+         }
+      }
+
+      .mobile-menu {
+         display: flex;
+         align-items: center;
+         gap: 20px;
+
+         @include mx.breakpoint-up (large) {
+            display: none;
+         }
+
+         .icon {
+            width: 20px;
+         }
+
+         .logo {
+            height: 51px;
          }
       }
 
@@ -94,6 +149,8 @@
 
          .notification {
             position: relative;
+            display: grid;
+            place-items: center;
             cursor: pointer;
 
             &.active::before {
@@ -109,6 +166,13 @@
 
          .icon {
             width: 20px;
+            pointer-events: none;
+
+            path {
+               @include mx.breakpoint-down(medium) {
+                  stroke: var(--branco)
+               }
+            }
 
             &-profile {
                border-radius: var(--radius-circle);
@@ -117,187 +181,17 @@
          }
       }
    }
-
-   form.container {
-      padding-block-start: 36px;
-   }
-
-   fieldset {
-      border: none;
-      margin-block-end: 80px;
-
-      &.fs-valores {
-         label {
-            flex: 1 262px;
-         }
-      }
-
-      legend {
-         font-size: 20px;
-         font-weight: 700;
-         line-height: 120.1%;
-         letter-spacing: -0.6px;
-         margin-block-end: 30px;
-      }
-   }
-
-   .form-group {
-      display: flex;
-      flex-wrap: wrap;
-      row-gap: 30px;
-      column-gap: 19px;
-   }
-
-   .input-group {
-      display: flex;
-      width: 100%;
-      gap: 19px;
-
-   }
 }
 
-label {
-   position: relative;
-   align-self: flex-end;
-   width: 100%;
-   font-style: normal;
-   font-weight: 700;
-   line-height: 120.1%;
-   letter-spacing: -0.48px;
+body.swal2-shown>[aria-hidden="true"] {
+   transition: 0.1s filter;
+   filter: blur(41px);
+}
 
-   input {
-      height: 60px;
-      margin-block-start: 5px;
-      padding: 22px 40px;
-      color: var(--netra-escura);
-      font-weight: 500;
+.custom-swal {
+   border-radius: var(--radius2);
+
+   .swal-btns {
       border-radius: var(--radius1);
-      background: #FFF;
-
-      &::placeholder {
-         color: var(--neutra-cinza-escuro);
-         font-size: 14px;
-         font-weight: 500;
-         line-height: 120.1%;
-         letter-spacing: -0.42px;
-      }
-   }
-
-   &.cifrao {
-      input {
-         padding-inline-start: 59px;
-      }
-
-      &::before {
-         content: "R$";
-         position: absolute;
-         top: 50px;
-         left: 35px;
-         font-size: 14px;
-         font-weight: 500;
-      }
-   }
-}
-
-.double-form {
-   display: flex;
-   flex-wrap: wrap;
-   gap: 70px;
-   line-height: 120.1%;
-   /* 16.814px */
-
-   .profile {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 580px;
-      max-width: 539px;
-      padding: 80px 50px 76px;
-      background-color: var(--branco);
-      border-radius: var(--radius2);
-      box-shadow: var(--box-shadow-3);
-
-      &-pic {
-         display: flex;
-         align-items: center;
-         position: relative;
-         width: 128px;
-
-         input {
-            display: none;
-         }
-      }
-
-      .edit-pic {
-         position: absolute;
-         right: 0;
-         bottom: 0;
-         display: grid;
-         place-items: center;
-         width: 43px;
-         aspect-ratio: 1;
-         background-color: var(--primaria);
-         border: 3px solid var(--branco);
-         border-radius: var(--radius-circle);
-
-         .icon {
-            width: 15px;
-         }
-      }
-
-      &-image {
-         width: 128px;
-         border-radius: var(--radius-circle);
-      }
-
-      &-name {
-         margin-block: 20px 3px;
-         font-size: 24px;
-         font-weight: 700;
-         letter-spacing: -0.96px;
-      }
-
-      &-city {
-         color: var(--neutra-cinza-escuro-1, #808080);
-         font-size: 14px;
-         font-weight: 500;
-         letter-spacing: -0.56px;
-      }
-
-      &-sections {
-         width: 100%;
-         margin-block-start: 30px;
-
-         a {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 42px 27px 51px;
-            font-weight: 600;
-            line-height: 120.1%;
-            letter-spacing: -0.48px;
-
-            svg {
-               stroke: #404041;
-            }
-
-            &:first-child {
-               border-bottom: 1px solid var(--neutra-cinza-escuro);
-            }
-
-            &:is(.active, :hover, :focus-visible) {
-               color: var(--primaria);
-
-               & svg {
-                  stroke: var(--primaria);
-               }
-            }
-         }
-      }
-   }
-
-   .submit {
-      margin-inline: auto;
    }
 }
