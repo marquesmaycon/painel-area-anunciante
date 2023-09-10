@@ -41,6 +41,7 @@
 
    label {
       margin-block: 15px 40px;
+      font-weight: 600;
    }
 
    &-msg {
@@ -52,6 +53,10 @@
    input {
       border-radius: 9px;
       border: 1px solid #D9DBD0;
+   }
+
+   &.valores {
+      width: min(865px, 85%);
    }
 
    &.popup {

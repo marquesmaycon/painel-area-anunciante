@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet">
+   <!-- styles -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+   <link rel="stylesheet" href="./assets/css/style.css">
+
+   <!-- scripts -->
+   <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+   <!-- custom script -->
+   <script src="./assets/js/script.js" defer></script>
+
+   <title>Contatos</title>
+</head>
+
+<body>
+   <header class="header" data-header>
+      <div class="content">
+         <div class="top">
+            <button type="button" class="close-nav" data-nav-toggler>
+               <svg class="icon" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g id="Group 87">
+                     <path id="Vector 10" d="M1 1L10 9.9961" stroke="#404041" stroke-width="2" stroke-linecap="round" />
+                     <path id="Vector 11" d="M1 10L10 1.0039" stroke="#404041" stroke-width="2"
+                        stroke-linecap="round" />
+                  </g>
+               </svg>
+            </button>
+            <img src="./assets/images/logo.png" width="160" height="97" alt="logo" class="logo">
+
+            <div class="selects">
+               <select name="" id="" class="custom-select">
+                  <option value="">Campo 1</option>
+               </select>
+               <select name="" id="" class="custom-select">
+                  <option value="">Campo 2</option>
+               </select>
+            </div>
+         </div>
+
+         <nav class="navbar">
+            <ul class="navbar-list">
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-dashboard.svg" alt="ícone" class="icon">
+                     Dashboard
+                  </a>
+               </li>
+               <li>
+                  <a href="./dados-do-imovel.html" class="navbar-link">
+                     <img src="./assets/images/icon-write.svg" alt="ícone" class="icon">
+                     Dados do Imóvel
+                  </a>
+               </li>
+               <li>
+                  <a href="./contatos.html" class="navbar-link active">
+                     <img src="./assets/images/icon-phone.svg" alt="ícone" class="icon">
+                     Contatos
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-image.svg" alt="ícone" class="icon">
+                     Fotos
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-video.svg" alt="ícone" class="icon">
+                     Vídeos
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-checked.svg" alt="ícone" class="icon">
+                     Itens Disponíveis
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-bathtub.svg" alt="ícone" class="icon">
+                     Comodidades
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-tree.svg" alt="ícone" class="icon">
+                     Proximidades
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-exclamation.svg" alt="ícone" class="icon">
+                     Observações
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-calendar.svg" alt="ícone" class="icon">
+                     Calendário
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-holiday.svg" alt="ícone" class="icon">
+                     Feriados
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-condo.svg" alt="ícone" class="icon">
+                     Condomínio
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-switch.svg" alt="ícone" class="icon">
+                     Regras de check-in e check-out
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-yes-no.svg" alt="ícone" class="icon">
+                     Permitido e Proibido
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-pricing.svg" alt="ícone" class="icon">
+                     Valores
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-ticket.svg" alt="ícone" class="icon">
+                     Pontos de Venda
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-crew.svg" alt="ícone" class="icon">
+                     Organização
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-menu.svg" alt="ícone" class="icon">
+                     Cardápio
+                  </a>
+               </li>
+               <li>
+                  <a href="#" class="navbar-link">
+                     <img src="./assets/images/icon-party.svg" alt="ícone" class="icon">
+                     Eventos que atendemos
+                  </a>
+               </li>
+            </ul>
+         </nav>
+
+      </div>
+   </header>
+
+   <div class="overlay" data-overlay data-nav-toggler></div>
+
+   <main class="main">
+      <div class="top-bar">
+         <div class="container">
+
+            <div class="left">
+               <img src="./assets/images/icon-write.svg" alt="" class="icon">
+               <h4>Dados do imóvel</h4>
+            </div>
+
+            <div class="mobile-menu">
+               <button type="button" data-nav-toggler>
+                  <img src="./assets/images/icon-hamburger-menu.svg" alt="icone menu" class="icon">
+               </button>
+               <a href="#"><img src="assets/images/logo.png" alt="logo" class="logo"></a>
+            </div>
+
+            <div class="right">
+               <div class="notification active" data-dialog-btn data-target="notification">
+                  <svg class="icon" width="20" height="22" viewBox="0 0 20 22" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <path
+                        d="M16.7491 8.70957V8.00497C16.7491 4.13623 13.7274 1 10 1C6.27256 1 3.25087 4.13623 3.25087 8.00497V8.70957C3.25087 9.5552 3.00972 10.3818 2.5578 11.0854L1.45036 12.8095C0.438821 14.3843 1.21105 16.5249 2.97036 17.0229C7.57274 18.3257 12.4273 18.3257 17.0296 17.0229C18.789 16.5249 19.5612 14.3843 18.5496 12.8095L17.4422 11.0854C16.9903 10.3818 16.7491 9.5552 16.7491 8.70957Z"
+                        stroke="#404041" stroke-width="1.5" />
+                     <path d="M5.5 18C6.15503 19.7478 7.92246 21 10 21C12.0775 21 13.845 19.7478 14.5 18"
+                        stroke="#404041" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+               </div>
+               <img src="./assets/images/icon-profile-pic.svg" alt="ícone perfil" class="icon-profile" data-dialog-btn
+                  data-target="profile-popup">
+            </div>
+
+         </div>
+      </div>
+
+      <div class="container">
+
+         <div class="title-page">
+            <img src="./assets/images/icon-write.svg" alt="icone dados" class="icon">
+            Dados do imóvel
+         </div>
+
+         <section class="instructions">
+            <div class="top">
+               <h2 class="title has-icon">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <circle cx="12" cy="12" r="11.25" stroke="white" stroke-width="1.5" />
+                     <path d="M12 11L12 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                     <circle cx="12" cy="7" r="1" fill="white" />
+                  </svg>
+                  Instruções
+               </h2>
+
+               <button type="button" data-collapse="instructions">
+                  <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate">
+               </button>
+            </div>
+
+            <article>
+               <div class="collapse-content">
+                  <p>Nesta seção, você deverá inserir os contatos que deseja que apareça em seu anúncio.</p>
+                  <p>Caso deseje, poderá ser incluso até três telefones/celular para contato por anunciante, na seguinte
+                     ordem:</p>
+                  <ul>
+                     <li>Nome</li>
+                     <li>
+                        Observação (caso haja necessidade de fazer alguma observação sobre o melhor dia e horário o
+                        usuário
+                        poderá entrar em contato, ou até mesmo mencionar qual o horário não poderá fazer atendimento e
+                        mencionando que o mesmo será feito via whatsapp)
+                     </li>
+                     <li>Celular com whatsapp</li>
+                     <li>Celular sem whatsapp</li>
+                     <li>Telefone fixo</li>
+                     <li>E-mail</li>
+                  </ul>
+                  <p><b>Obs: Nos contatos será aceito apenas 01 e-mail válido, o qual deverá constar apenas no primeiro
+                        contato.</b></p>
+
+                  <p><b>Lembramos que a divulgação dos contatos e seus respectivos telefones são de responsabilidade do
+                        anunciante.</b></p>
+               </div>
+            </article>
+         </section>
+
+         <form method="post" data-form="contacts">
+            <div class="contact-item" data-contact-item>
+               <legend class="title has-btn">
+                  Contato 1
+
+                  <button type="button" data-collapse="contact">
+                     <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
+                  </button>
+               </legend>
+
+               <div class="collapse-content">
+                  <div class="form-group">
+                     <div class="input-group">
+                        <label class="label">
+                           Título do contato
+                           <input type="text" name="" placeholder="ex: anuciante ou responsável pelo local">
+                        </label>
+                        <label class="label">
+                           Nome do anunciante
+                           <input type="text" name="" placeholder="ex: Roberto">
+                        </label>
+                     </div>
+
+                     <label class="label">
+                        Observações
+                        <input type="text" name="" placeholder="ex: só atendemos aos finais de semana">
+                     </label>
+
+                     <div class="input-group">
+                        <label class="label">
+                           Celular/Whatsapp
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                        <label class="label">
+                           Celular/Whatsapp 2
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                        <label class="label">
+                           Telefone Fixo
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                     </div>
+
+                     <label class="label">
+                        E-mail
+                        <input type="text" name="" placeholder="ex: fulano@gmail.com">
+                     </label>
+                  </div>
+
+               </div>
+
+            </div>
+
+            <div class="contact-item" data-contact-item>
+               <legend class="title has-btn">
+                  <div class="has-icon">
+                     Contato 2
+   
+                     <button type="button" class="btn-dynamic delete" data-delete-field="[data-contact-item]">
+                        <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                        Excluir
+                     </button>
+                  </div>
+   
+                  <button type="button" data-collapse="contact">
+                     <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
+                  </button>
+               </legend>
+
+               <div class="collapse-content">
+                  <div class="form-group">
+                     <div class="input-group">
+                        <label class="label">
+                           Título do contato
+                           <input type="text" name="" placeholder="ex: anuciante ou responsável pelo local">
+                        </label>
+                        <label class="label">
+                           Nome do anunciante
+                           <input type="text" name="" placeholder="ex: Roberto">
+                        </label>
+                     </div>
+
+                     <label class="label">
+                        Observações
+                        <input type="text" name="" placeholder="ex: só atendemos aos finais de semana">
+                     </label>
+
+                     <div class="input-group">
+                        <label class="label">
+                           Celular/Whatsapp
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                        <label class="label">
+                           Celular/Whatsapp 2
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                        <label class="label">
+                           Telefone Fixo
+                           <input type="text" name="" placeholder="(00) 0 0000-0000">
+                        </label>
+                     </div>
+
+                     <label class="label">
+                        E-mail
+                        <input type="text" name="" placeholder="ex: fulano@gmail.com">
+                     </label>
+                  </div>
+
+               </div>
+
+            </div>            
+         </form>
+
+         <button type="button" class="btn-dynamic add" data-add-contact>
+            <img src="./assets/images/icon-plus.svg" alt="ícone mais">
+            adicionar novo campo
+         </button>
+      </div>
+   </main>
+
+   <footer>
+      <dialog class="dialog popup" data-dialog="profile-popup">
+         <div class="content">
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Olá, Marlon Seolin!</h3>
+
+            <div class="popup-body">
+               <a href="./index.html" class="popup-item">
+                  Meu perfil
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+               <a href="#" class="popup-item">
+                  <span class="has-icon">
+                     <img src="./assets/images/icon-door.svg" alt="exit door">
+                     Sair
+                  </span>
+                  <img src="./assets/images/icon-chevron-right.svg" alt="chevron direita">
+               </a>
+            </div>
+         </div>
+      </dialog>
+
+      <dialog class="dialog popup notification" data-dialog="notification">
+         <div class="content">
+
+            <button class="dialog-close" data-dialog-close>
+               <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+            </button>
+
+            <h3>Notificações</h3>
+
+            <ul>
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+
+               <li class="popup-item">
+                  <img src="./assets/images/icon-grow-arrow.svg" alt="grow arrow" class="icon">
+                  <h5>Você recebeu 75 novas visitas no seu anúncio nessa semana</h5>
+                  <p>Entre em sua dashboard e confira mais detalhes</p>
+                  <span class="time">há 3h</span>
+               </li>
+            </ul>
+
+
+         </div>
+      </dialog>
+   </footer>
+</body>
+
+</html>

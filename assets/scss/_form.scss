@@ -1,6 +1,6 @@
 @use "./mixings" as mx;
 
-.title-section {
+.title-page {
    display: flex;
    align-items: center;
    gap: 11px;
@@ -11,6 +11,7 @@
    @include mx.breakpoint-up(large) {
       display: none;
    }
+
    @include mx.breakpoint-down(medium) {
       margin-block-start: 0px;
    }
@@ -26,17 +27,13 @@ fieldset {
    margin-block-end: 80px;
 
    &.fs-valores {
-      label {
+      .label {
          flex: 1 262px;
       }
    }
 
    legend {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 120.1%;
-      letter-spacing: -0.6px;
-      margin-block-end: 30px;
+      margin-bottom: 30px;
 
       @include mx.breakpoint-down(medium) {
          font-size: 16px;
@@ -49,6 +46,7 @@ fieldset {
    flex-wrap: wrap;
    row-gap: 30px;
    column-gap: 19px;
+   transition: all 300ms ease;
 }
 
 .input-group {
@@ -58,7 +56,7 @@ fieldset {
 
 }
 
-label {
+.label {
    position: relative;
    align-self: flex-end;
    width: 100%;
@@ -227,5 +225,57 @@ label {
 
    .submit {
       margin-inline: auto;
+   }
+}
+
+.contact-item {
+   padding-block: 50px;
+   border-block-start: 1px solid var(--neutra-cinza-escuro);
+
+   &:last-child {
+      border-block-end: 1px solid var(--neutra-cinza-escuro);
+   }
+
+   &.active {
+      legend {
+         margin-block-end: 30px;
+      }
+
+      .icon.rotate {
+         transform: rotate(0deg);
+      }
+
+      .collapse-content {
+         opacity: 1;
+         grid-template-rows: 1fr;
+      }
+   }
+
+   legend {
+      transition: all 300ms ease;
+   }
+
+   .collapse-content {
+      opacity: 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: all 300ms ease;
+
+      .form-group {
+         overflow: hidden;
+      }
+   }
+
+   .has-icon {
+      gap: 38px;
+   }
+
+   .icon {
+      width: 17px;
+      transition: all 500ms ease;
+   }
+
+   .btn-dynamic.delete {
+      position: static;
    }
 }

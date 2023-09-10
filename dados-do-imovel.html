@@ -62,7 +62,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link">
+                  <a href="contatos.html" class="navbar-link">
                      <img src="./assets/images/icon-phone.svg" alt="ícone" class="icon">
                      Contatos
                   </a>
@@ -208,21 +208,21 @@
       <div class="container">
          <form action="">
 
-            <div class="title-section">
+            <div class="title-page">
                <img src="./assets/images/icon-write.svg" alt="icone dados" class="icon">
                Dados do imóvel
             </div>
 
             <fieldset>
-               <legend>Dados Gerais</legend>
+               <legend class="title">Dados Gerais</legend>
 
                <div class="input-group">
-                  <label for="">
+                  <label class="label">
                      Nome (que você quer que apareça em destaque)
                      <input type="text">
                   </label>
 
-                  <label for="">
+                  <label class="label">
                      Tipo do Imóvel
                      <input type="text">
                   </label>
@@ -231,32 +231,32 @@
             </fieldset>
 
             <fieldset>
-               <legend>Endereço</legend>
+               <legend class="title">Endereço</legend>
 
                <div class="form-group">
                   <div class="input-group">
-                     <label>
+                     <label class="label">
                         Rua e Número
                         <input type="text" placeholder="ex: lindo imóvel residencial na Zona 03">
                      </label>
 
-                     <label>
+                     <label class="label">
                         Bairro
                         <input type="text">
                      </label>
                   </div>
 
-                  <label>
+                  <label class="label">
                      Cidade
                      <input type="text">
                   </label>
 
-                  <label>
+                  <label class="label">
                      Localização (Iframe do mapa)
                      <input type="text">
                   </label>
 
-                  <label>
+                  <label class="label">
                      Coordenadas (Iframe do mapa)
                      <input type="text">
                   </label>
@@ -266,16 +266,16 @@
 
             <fieldset>
 
-               <legend>Descrição</legend>
+               <legend class="title">Descrição</legend>
 
-               <label>
+               <label class="label">
                   Breve Descrição de Apresentação
                   <textarea name="" id="" cols="30" rows="10" class="text-mce">
 
                   </textarea>
                </label>
 
-               <label>
+               <label class="label">
                   Descrição Completa
                   <textarea name="" id="" cols="30" rows="10" class="text-mce">
 
@@ -285,24 +285,24 @@
             </fieldset>
 
             <fieldset class="fs-valores">
-               <legend>Valores</legend>
+               <legend class="title">Valores</legend>
 
                <div class="form-group" data-valores-container>
-                  <label class="cifrao">
+                  <label class="label cifrao">
                      Aluguel                     
                      <input type="text">
                   </label>
-                  <label class="cifrao">
+                  <label class="label cifrao">
                      Aluguel 2
-                     <button type="button" class="btn-dynamic delete" data-delete-field>
+                     <button type="button" class="btn-dynamic delete" data-delete-field="label">
                         <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
                         Excluir
                      </button>
                      <input type="text">
                   </label>
-                  <label class="cifrao">
+                  <label class="label cifrao">
                      Aluguel 3
-                     <button type="button" class="btn-dynamic delete" data-delete-field>
+                     <button type="button" class="btn-dynamic delete" data-delete-field="label">
                         <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
                         Excluir
                      </button>
@@ -323,7 +323,7 @@
 
    </main>
 
-   <dialog class="dialog" data-dialog="adicionar-campo">
+   <dialog class="dialog valores" data-dialog="adicionar-campo">
       <div class="content">
          <button class="dialog-close" data-dialog-close>
             <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
@@ -331,7 +331,7 @@
 
          <h3>Adicionar novo campo</h3>
 
-         <label>
+         <label class="label">
             Título do campo <b class="dialog-msg" data-label-msg>(Teste de mensagem!)</b>
             <input type="text" name="titulo-campo" placeholder="ex: da Silva">
          </label>

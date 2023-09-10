@@ -4,6 +4,14 @@
    width: 28px;
    aspect-ratio: 1;
    object-fit: contain;
+   transition: all 300ms ease;
+
+   &.rotate {
+      transform: rotate(-180deg);
+   }
+}
+.no-events {
+   pointer-events: none;
 }
 
 .container {
@@ -11,6 +19,21 @@
 
    @include mx.breakpoint-down(medium) {
       padding: 27px 20px;
+   }
+}
+
+.title {
+   color: var(--neutra-escura);
+   font-size: 20px;
+   font-style: normal;
+   font-weight: 700;
+   line-height: 120.1%;
+   letter-spacing: -0.6px;
+
+   &-big {
+      font-size: 24px;
+      line-height: 21px;
+      letter-spacing: -0.72px;
    }
 }
 
@@ -62,19 +85,26 @@
          }
       }
    }
+
+   &.has-icon {
+      justify-content: center;
+   }
 }
 
-.has-icon {
-   display: flex;
-   align-items: center;
-   gap: 10px;
-}
+.has {
+   &-icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;      
+   }
 
-.section-title {
-   margin-block-end: 28px;
-   font-size: 24px;
-   font-weight: 700;
-   line-height: 21px;
+   &-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      width: 100%;
+   }
 }
 
 .main {

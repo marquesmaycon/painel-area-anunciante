@@ -57,17 +57,17 @@ const closeModal = function (ev) {
 }
 addEventMultipleElements(dialogCloseBtn, "click", closeModal)
 
-// profile picture
-const profilePicBtn = document.querySelector("[data-img-btn]")
-const profilePicInput = document.querySelector("[data-input-img]")
+// upload file
+const uploadBtn = document.querySelector("[data-upload-btn]")
+const inputFile = document.querySelector("[data-input-file=profile-pic]")
+uploadBtn.addEventListener("click", ev => {
+   ev.target.nextElementSibling.click()
+})
+
+// profile pic
 const profilePic = document.querySelector("[data-profile-pic]")
-
-if (profilePicBtn) {
-   profilePicBtn.addEventListener("click", () => {
-      profilePicInput.click()
-   })
-
-   profilePicInput.addEventListener("change", ev => {
+if (profilePic) {
+   inputFile.addEventListener("change", ev => {
       const file = ev.target.files[0]
       if (!file) return
       profilePic.src = URL.createObjectURL(file)
@@ -101,10 +101,9 @@ const addCampoValor = function (ev) {
       msg.textContent = "(Insira um título com 3+ caracteres)"
       return
    }
-   const dialog = ev.target.closest("dialog")
    const valoresContainer = document.querySelector("[data-valores-container]")
    const newElement = document.createElement("label")
-   newElement.classList.add("cifrao")
+   newElement.classList.add("label", "cifrao")
 
    newElement.innerHTML = `
       ${campo.value}
@@ -137,30 +136,183 @@ const cSwal = Swal.mixin({
    }
 })
 const deleteDynamicField = function (ev) {
-   if (ev.target.matches("[data-delete-field]")) {
+   const element = ev.target
+   if (element.matches("[data-delete-field]")) {
       cSwal.fire({
          title: 'Confirmação',
          text: "Você quer mesmo excluir o item?",
          icon: 'warning',
          showCancelButton: true,
          confirmButtonText: 'Sim, excluir!',
-         cancelButtonText: 'Cancelar'         
+         cancelButtonText: 'Cancelar'
       }).then((result) => {
          if (result.isConfirmed) {
             cSwal.fire({
                title: 'Certo',
                text: "O item será excluido ao salvar as alterações",
-               icon: 'success',               
+               icon: 'success',
                confirmButtonText: 'OK',
-               
+
             })
-            const field = ev.target.closest("label")
-            field.remove()
+            const parentToDelete = element.dataset.deleteField
+            element.closest(parentToDelete).remove()
          }
       })
    }
 }
-form.addEventListener("click", deleteDynamicField)
+if (form) {
+   form.addEventListener("click", deleteDynamicField)
+}
+// instructions
+const instructionCollapseBtn = document.querySelector("[data-collapse=instructions]")
+if (instructionCollapseBtn) {
+   instructionCollapseBtn.addEventListener("click", (ev) => {
+      ev.target.closest(".instructions").classList.toggle("active")
+   })
+}
+
+// contact accordion
+const formContacts = document.querySelector("[data-form=contacts]")
+if (formContacts) {
+   formContacts.addEventListener("click", ev => {
+      const element = ev.target
+      if (element.matches("[data-collapse=contact]")) {
+         const contato = element.closest(".contact-item");
+         const isContatoActive = contato.classList.contains("active");
+         const contactItems = document.querySelectorAll("[data-contact-item]")
+
+         contactItems.forEach(contact => contact.classList.remove("active"));
+
+         if (!isContatoActive) {
+            contato.classList.add("active");
+         }
+      }
+   })
+}
+
+// add contact 
+const addContactBtn = document.querySelector("[data-add-contact]")
+let contactsLength = document.querySelectorAll("[data-contact-item]").length
+if (addContactBtn) {
+   addContactBtn.addEventListener("click", () => {
+      contactsLength++
+
+      const newElement = document.createElement("div")
+      newElement.classList.add("contact-item")
+      newElement.setAttribute("data-contact-item", "")
+      newElement.innerHTML = `
+         <legend class="title has-btn">
+            <div class="has-icon">
+               Contato ${contactsLength}
+               <button type="button" class="btn-dynamic delete" data-delete-field="[data-contact-item]">
+                  <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                  Excluir
+               </button>
+            </div>
+            <button type="button" data-collapse="contact">
+               <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
+            </button>
+         </legend>
+         <div class="collapse-content">
+            <div class="form-group">
+               <div class="input-group">
+                  <label class="label">
+                     Título do contato
+                     <input type="text" name="" placeholder="ex: anuciante ou responsável pelo local">
+                  </label>
+                  <label class="label">
+                     Nome do anunciante
+                     <input type="text" name="" placeholder="ex: Roberto">
+                  </label>
+               </div>
+               <label class="label">
+                  Observações
+                  <input type="text" name="" placeholder="ex: só atendemos aos finais de semana">
+               </label>
+               <div class="input-group">
+                  <label class="label">
+                     Celular/Whatsapp
+                     <input type="text" name="" placeholder="(00) 0 0000-0000">
+                  </label>
+                  <label class="label">
+                     Celular/Whatsapp 2
+                     <input type="text" name="" placeholder="(00) 0 0000-0000">
+                  </label>
+                  <label class="label">
+                     Telefone Fixo
+                     <input type="text" name="" placeholder="(00) 0 0000-0000">
+                  </label>
+               </div>
+               <label class="label">
+                  E-mail
+                  <input type="text" name="" placeholder="ex: fulano@gmail.com">
+               </label>
+            </div>
+         </div>
+      `
+      formContacts.appendChild(newElement)
+   })
+}
+
+// adicionar fotos
+const inputPhotos = document.querySelector("[data-input-file=photos")
+const photosSubmit = document.querySelector("[data-photos-submit]")
+let photosLength = document.querySelectorAll("[data-table-body] tr").length
+
+inputPhotos.addEventListener("change", ev => {
+   const files = ev.target.files
+   if (!files) return
+
+   const photosMsg = document.querySelector("[data-photos-msg]")
+
+   photosMsg.classList.add("active")
+   photosMsg.textContent = ""
+   for (i = 0; i < files.length; i++) {
+      photosMsg.textContent += files[i].name + ", "
+   }
+   photosSubmit.style.display = "block"
+})
+const uploadPhotos = function () {
+   const files = inputPhotos.files
+   const tableBody = document.querySelector("[data-table-body]")
+
+   for (i = 0; i < files.length; i++) {
+      photosLength++
+      const newElement = document.createElement("tr")
+      newElement.innerHTML = `
+         <td>${photosLength}</td>
+         <td>#</td>
+         <td><img src="${URL.createObjectURL(files[i])}" alt="foto do album" class="photos-img"></td>
+         <td>${files[i].name}</td>
+         <td>${files[i].size / 1024}kb</td>
+         <td>
+            <label class="" data-label-radio>
+               <input type="radio" name="destaque">
+            </label>
+         </td>
+         <td>
+            <button type="button" data-delete-field="tr">
+               <img src="./assets/images/icon-trash-can.svg" alt="icon excluir" class="icon no-events">
+            </button>
+         </td>
+      `
+      tableBody.appendChild(newElement)
+   }
+}
+photosSubmit.addEventListener("click", uploadPhotos)
+
+// foto destaque
+const tableFotos = document.querySelector("[data-table=photos]")
+tableFotos.addEventListener("click", ev => {
+   const element = ev.target
+   if (element.matches("[data-label-radio]")) {
+      const radioLabels = tableFotos.querySelectorAll("[data-label-radio]")
+      radioLabels.forEach(label => {
+         label.classList.remove("active")
+      })
+      element.classList.add("active")
+   }
+})
 
 // swiper
 if (document.querySelector(".ads-swiper")) {

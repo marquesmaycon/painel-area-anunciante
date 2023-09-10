@@ -1,0 +1,73 @@
+.instructions {
+   padding: 44px 65px;
+   margin-block-end: 80px;
+   height: 112px;
+   background-color: var(--branco);
+   border-radius: var(--radius3);
+   transition: height 500ms ease;
+   overflow-y: hidden;
+
+   &.active {
+      padding: 44px 65px 100px;
+      height: 100%;
+
+      .icon.rotate {
+         transform: rotate(0deg);
+      }
+
+      article {
+         opacity: 1;
+         grid-template-rows: 1fr;
+      }
+
+   }
+
+   .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .title {
+         .icon {
+            width: 24px;
+
+            & :is(path, circle) {
+               stroke: var(--neutra-escura);
+            }
+         }
+      }
+
+      button {
+         .icon {
+            width: 13px;
+         }
+      }
+   }
+
+   article {
+      opacity: 0;
+      display: grid;
+      grid-template-rows: 0fr;
+      margin-block-start: 24px;
+      opacity: 0;
+      font-variant-numeric: lining-nums proportional-nums;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 170%;
+      letter-spacing: -0.42px;
+      transition: all 300ms ease;
+
+      > div {
+         overflow: hidden;
+      }
+
+      * {
+         margin-block-end: 20px;
+      }
+
+      li {
+         margin-inline-start: 1.5rem;
+         list-style: disc;
+      }
+   }
+}
