@@ -260,20 +260,22 @@ if (addContactBtn) {
 const inputPhotos = document.querySelector("[data-input-file=photos")
 const photosSubmit = document.querySelector("[data-photos-submit]")
 let photosLength = document.querySelectorAll("[data-table-body] tr").length
+if (inputPhotos) {
+   inputPhotos.addEventListener("change", ev => {
+      const files = ev.target.files
+      if (!files) return
+   
+      const photosMsg = document.querySelector("[data-photos-msg]")
+   
+      photosMsg.classList.add("active")
+      photosMsg.textContent = ""
+      for (i = 0; i < files.length; i++) {
+         photosMsg.textContent += files[i].name + ", "
+      }
+      photosSubmit.style.display = "block"
+   })
+}
 
-inputPhotos.addEventListener("change", ev => {
-   const files = ev.target.files
-   if (!files) return
-
-   const photosMsg = document.querySelector("[data-photos-msg]")
-
-   photosMsg.classList.add("active")
-   photosMsg.textContent = ""
-   for (i = 0; i < files.length; i++) {
-      photosMsg.textContent += files[i].name + ", "
-   }
-   photosSubmit.style.display = "block"
-})
 const uploadPhotos = function () {
    const files = inputPhotos.files
    const tableBody = document.querySelector("[data-table-body]")
@@ -301,20 +303,45 @@ const uploadPhotos = function () {
       tableBody.appendChild(newElement)
    }
 }
+if (photosSubmit) {
 photosSubmit.addEventListener("click", uploadPhotos)
+   
+}
 
 // foto destaque
 const tableFotos = document.querySelector("[data-table=photos]")
-tableFotos.addEventListener("click", ev => {
-   const element = ev.target
-   if (element.matches("[data-label-radio]")) {
-      const radioLabels = tableFotos.querySelectorAll("[data-label-radio]")
-      radioLabels.forEach(label => {
-         label.classList.remove("active")
-      })
-      element.classList.add("active")
-   }
-})
+if (tableFotos) {
+   tableFotos.addEventListener("click", ev => {
+      const element = ev.target
+      if (element.matches("[data-label-radio]")) {
+         const radioLabels = tableFotos.querySelectorAll("[data-label-radio]")
+         radioLabels.forEach(label => {
+            label.classList.remove("active")
+         })
+         element.classList.add("active")
+      }
+   })
+}
+
+// accommodations accordion
+const formAccommodations = document.querySelector("[data-form=accommodations]")
+if (formAccommodations) {
+   formAccommodations.addEventListener("click", ev => {
+      const element = ev.target
+      if (element.matches("[data-collapse=accommodation]")) {
+         const contato = element.closest(".accommodation-item");
+         const isContatoActive = contato.classList.contains("active");
+         const accommodationItems = document.querySelectorAll("[data-accommodation-item]")
+
+         accommodationItems.forEach(accommodation => accommodation.classList.remove("active"));
+
+         if (!isContatoActive) {
+            contato.classList.add("active");
+         }
+      }
+   })
+}
+
 
 // swiper
 if (document.querySelector(".ads-swiper")) {

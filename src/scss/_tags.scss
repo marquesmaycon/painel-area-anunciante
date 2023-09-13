@@ -1,3 +1,71 @@
+.tags {
+
+   &-container {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .custom-tagify {
+         --tag-bg: #ECF9EF;
+         --tag-hover: #d3ffde;
+         --tag-text-color: #3B9756;
+         --tag-remove-bg: #F9ECEC;
+         --tag-invalid-bg: #F9ECEC;
+         --tag-pad: 12px 30px;
+         --tag-inset-shadow-size: 30px;
+         --tag-border-radius: 3px;
+         --tag-text-color--edit: #111;
+         --tag-remove-btn-color: #3B9756;
+         --tag-remove-btn-bg--hover: var(--primaria);
+
+         gap: 15px;
+         width: 100%;
+         margin-block-start: 10px;
+         padding: 20px 30px;
+         background-color: white;
+         border-radius: var(--radius1);
+         border: none;
+      }
+
+   }
+
+   &-dd {
+      border-radius: 3px;
+      overflow-y: hidden;
+
+      .tagify__dropdown__wrapper {
+         border-radius: var(--radius1);         
+         padding: 10px 15px;
+
+         &::-webkit-scrollbar {
+            width: 8px;
+
+            &-thumb {
+               background-color: var(--primaria);
+               border-radius: 4px;
+            }
+         }         
+      }
+
+      .tagify__dropdown__item {
+         // display: inline-block;
+         vertical-align: middle;
+         padding: 5px 15px;
+         border-radius: 3px;
+         margin: 5px;
+         background: #F9ECEC;
+         font-size: 11px;
+         font-weight: 600;
+         color: #D92229;
+         transition: all 200ms ease;
+
+         &:hover {
+            background-color: #d3ffde;
+         }
+      }
+   }
+}
+
 .suggestions {
    display: flex;
    align-items: flex-start;
@@ -23,7 +91,7 @@
       &:is(:hover, :focus-visible) {
          background-color: darken($bg-sugg-item, 10);
       }
-     
+
       button {
          color: #D92229;
          font-size: 13px;

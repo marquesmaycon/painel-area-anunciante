@@ -261,7 +261,7 @@
          <form method="post" data-form="contacts">
             <div class="contact-item" data-contact-item>
                <legend class="title has-btn">
-                  Contato 1
+                  <span data-collapse="contact">Contato 1</span>
 
                   <button type="button" data-collapse="contact">
                      <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
@@ -269,7 +269,7 @@
                </legend>
 
                <div class="collapse-content">
-                  <div class="form-group">
+                  <div class="form-group collapse-hide">
                      <div class="input-group">
                         <label class="label">
                            Título do contato
@@ -312,9 +312,9 @@
             </div>
 
             <div class="contact-item" data-contact-item>
-               <legend class="title has-btn">
+               <div class="title has-btn">
                   <div class="has-icon">
-                     Contato 2
+                     <span data-collapse="contact">Contato 2</span>
    
                      <button type="button" class="btn-dynamic delete" data-delete-field="[data-contact-item]">
                         <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
@@ -325,10 +325,10 @@
                   <button type="button" data-collapse="contact">
                      <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
                   </button>
-               </legend>
+               </div>
 
                <div class="collapse-content">
-                  <div class="form-group">
+                  <div class="form-group collapse-hide">
                      <div class="input-group">
                         <label class="label">
                            Título do contato

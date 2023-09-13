@@ -10,6 +10,11 @@
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
 
+   <!-- Tagify -->
+   <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify"></script>
+   <script src="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.polyfills.min.js"></script>
+   <link href="https://cdn.jsdelivr.net/npm/@yaireo/tagify/dist/tagify.css" rel="stylesheet" type="text/css" />
+   
    <!-- styles -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
    <link rel="stylesheet" href="./assets/css/style.css">
@@ -18,7 +23,9 @@
    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
    <script src="./assets/js/script.js" defer></script>
+   <script src="./assets/js/tagfy.js" defer></script>
    <title>Comodidades</title>
+   
 </head>
 
 <body>
@@ -349,35 +356,83 @@
             <fieldset>
                <legend class="title">Principais comodidades</legend>
 
-               <div class="form-group">
-                  <label class="label">
-                     Adicionados
-                     <input type="text" name="" id="">
-                  </label>
+               <div class="form-group tags">
 
-                  <label class="label">
-                     Opções para adicionar
-                     
-                     <ul class="suggestions">
-                        <li class="suggestions-item">
-                           <button type="button">Opção 01</button>
-                        </li>
-                        <li class="suggestions-item">
-                           <button type="button">Opção 01</button>
-                        </li>
-                        <li class="suggestions-item">
-                           <button type="button">Opção 01</button>
-                        </li>
-                     </ul>
-                     
-                  </label>
+                  <div class="tags-container">
+                     <span class="label">Adicionados</span>
+                     <input type="text" name="principaiscomodidades" class="custom-tagify" value="tag1, tag2 autofocus">
+                  </div>
+                  
                </div>
 
             </fieldset>
+
+            <fieldset>
+               <legend class="title">Comodidades por área</legend>
+
+               <ul>
+                  <li class="accommodation-item" data-accommodation-item>
+                     <div class="title has-btn">
+                        <div class="has-icon">
+                           <span data-collapse="accommodation">Cozinha</span>
+         
+                           <button type="button" class="btn-dynamic delete" data-delete-field="[data-accommodation-item]">
+                              <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+                              Excluir
+                           </button>
+                        </div>
+         
+                        <button type="button" data-collapse="accommodation">
+                           <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
+                        </button>
+                     </div>
+      
+                     <div class="collapse-content">                        
+                        <div class="collapse-hide">
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                           tagify <br>
+                        </div>
+                     </div>        
+      
+                  </li>                  
+               </ul>
+            </fieldset>
+
+            <button type="button" class="btn-dynamic add" data-dialog-btn data-target="adicionar-campo">
+               <img src="./assets/images/icon-plus.svg" alt="ícone mais">
+               adicionar novo área
+            </button>
+
+            <button type="submit" class="btn submit">Salvar e atualizar</button>
          </form>
       </div>
    </main>
 
+   <dialog class="dialog comodidades" data-dialog="adicionar-campo">
+      <div class="content">
+         <button class="dialog-close" data-dialog-close>
+            <img src="./assets/images/icon-close.svg" class="icon" alt="icone de fechar">
+         </button>
+
+         <h3>Adicionar nova área com comodidades</h3>
+
+         <label class="label">
+            Título do área <b class="dialog-msg" data-label-msg></b>
+            <input type="text" name="titulo-campo" placeholder="ex: da Silva">
+         </label>
+
+         <button type="button" class="btn submit" data-add-valor>Adicionar</button>
+      </div>
+   </dialog>
 
    <footer>
       <dialog class="dialog popup" data-dialog="profile-popup">
