@@ -1,0 +1,35 @@
+.suggestions {
+   display: flex;
+   align-items: flex-start;
+   justify-content: space-between;
+   gap: 15px;
+   height: 140px;
+   margin-block-start: 10px;
+   padding: 20px 30px;
+   color: var(--netra-escura);
+   font-weight: 500;
+   border-radius: var(--radius1);
+   background: #FFF;
+   overflow-y: auto;
+
+   &-item {
+      $bg-sugg-item: #F9ECEC;
+      padding: 12px 20px;
+      border-radius: 3px;
+      background-color: $bg-sugg-item;
+      cursor: pointer;
+      transition: all 200ms ease;
+
+      &:is(:hover, :focus-visible) {
+         background-color: darken($bg-sugg-item, 10);
+      }
+     
+      button {
+         color: #D92229;
+         font-size: 13px;
+         font-weight: 600;
+         line-height: 19.985px;
+         letter-spacing: -0.476px;
+      }
+   }
+}

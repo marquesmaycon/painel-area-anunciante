@@ -60,9 +60,11 @@ addEventMultipleElements(dialogCloseBtn, "click", closeModal)
 // upload file
 const uploadBtn = document.querySelector("[data-upload-btn]")
 const inputFile = document.querySelector("[data-input-file=profile-pic]")
-uploadBtn.addEventListener("click", ev => {
-   ev.target.nextElementSibling.click()
-})
+if (uploadBtn) {
+   uploadBtn.addEventListener("click", ev => {
+      ev.target.nextElementSibling.click()
+   })
+}
 
 // profile pic
 const profilePic = document.querySelector("[data-profile-pic]")

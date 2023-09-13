@@ -4,23 +4,21 @@
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- font -->
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
       rel="stylesheet">
+
    <!-- styles -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
    <link rel="stylesheet" href="./assets/css/style.css">
 
    <!-- scripts -->
    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
-   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
-      <!-- custom script -->
    <script src="./assets/js/script.js" defer></script>
-
-   <title>Document</title>
+   <title>Comodidades</title>
 </head>
 
 <body>
@@ -63,7 +61,7 @@
                   </a>
                </li>
                <li>
-                  <a href="contatos.html" class="navbar-link">
+                  <a href="./contatos.html" class="navbar-link">
                      <img src="./assets/images/icon-phone.svg" alt="ícone" class="icon">
                      Contatos
                   </a>
@@ -87,7 +85,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link">
+                  <a href="#" class="navbar-link active">
                      <img src="./assets/images/icon-bathtub.svg" alt="ícone" class="icon">
                      Comodidades
                   </a>
@@ -206,280 +204,180 @@
          </div>
       </div>
 
-      <form action="" class="container double-form" data-profile-form>
+      <div class="container">
 
-         <div class="profile">
-            <div class="profile-pic">
-
-               <img src="./assets/images/icon-profile-pic.svg" alt="" class="profile-image" data-profile-pic>
-
-               <button type="button" class="edit-pic" data-upload-btn>
-                  <img src="./assets/images/icon-pencil.svg" alt="ícone editar" class="icon">
-               </button>
-
-               <input type="file" name="arquivo" data-input-file="profile-pic">
-            </div>
-
-            <h2 class="profile-name">Marlon Seolin</h2>
-            <p class="profile-city">Maringá - PR</p>
-
-            <div class="profile-sections">
-               <button type="button" class="section active" data-section-btn="infos">
-                  Alterar dados cadastrais
-
-                  <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="" stroke-width="2.00252"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-               </button>
-
-               <button type="button" class="section" data-section-btn="ads">
-                  Todos os anúncios
-
-                  <svg width="8" height="11" viewBox="0 0 8 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-                     <path id="Vector" d="M2 9.01562L6 5.01059L2 1.00556" stroke="#404041" stroke-width="2.00252"
-                        stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-               </button>
-            </div>
+         <div class="title-page">
+            <img src="./assets/images/icon-write.svg" alt="icone dados" class="icon">
+            Comodidades
          </div>
 
-         <div class="profile-info active" data-profile="infos">
+         <section class="instructions">
+            <div class="top">
+               <h2 class="title has-icon">
+                  <svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                     <circle cx="12" cy="12" r="11.25" stroke="white" stroke-width="1.5" />
+                     <path d="M12 11L12 17" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                     <circle cx="12" cy="7" r="1" fill="white" />
+                  </svg>
+                  Instruções
+               </h2>
+
+               <button type="button" data-collapse="instructions">
+                  <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate">
+               </button>
+            </div>
+
+            <article>
+               <div class="collapse-content">
+                  <p>Clique sobre o botão <b>"Adicionar Fotos"</b> para selecionar as fotos que você deseja enviar para
+                     o seu
+                     anúncio.</p>
+
+                  <p>Para marcar uma imagem que ficará como principal em seu anúncio, clicar no seletor
+                     <b>"Principal"</b>
+                     localizado na frente da imagem. Após escolher a imagem como principal, a faixa ficará na cor verde.
+                  </p>
+
+                  <p>O tamanho máximo do arquivo para uploads 5 MB para cada imagem.</p>
+
+                  <p>Enviar imagens apenas no formato"JPG e PNG".</p>
+
+                  <p>Após todas as imagens terem sido carregadas no sistema, você poderá ordenar as mesmas, basta clicar
+                     no
+                     botão roxo "Ordenar Imagens".</p>
+
+                  <p>Assim que as imagens estiverem a vista, é sô clicar sobre a imagem e arrastar para a posição
+                     desejada,
+                     para que as mesmas possam ficar melhor posiciona-das.</p>
+
+                  <p>Para apagar alguma imagem que esteja na galeria de iamgens, basta selecionar a imagem a ser apagada
+                     no
+                     botão "selecionar" e depois clicar no botão escrito "Deletar".</p>
+
+                  <p><b>OBS: Lembramos que uma vez que a imagem foi deletada, ela será apagada de seu anúncio no mesmo
+                        instante. Caso a imagem seja deletada por engano, nossa empresa não conseguirá recupera-la. Será
+                        preciso que você tenha a imagem arquivada em seu computador, celular ou câmera fotográfica, para
+                        poder
+                        carregá-la novamente para o seu anúncio.</b></p>
+               </div>
+            </article>
+         </section>
+
+         <form method="post" class="accommodations" data-form="accommodations">
+
             <fieldset>
-               <legend class="title-big">Alterar dados cadastrais</legend>
+               <legend class="title">Comodidades em destaque (com ícones)</legend>
 
-               <div class="form-group">
-                  <div class="input-group">
-                     <label for="">
-                        Nome
-                        <input type="text">
-                     </label>
+               <div class="input-group accommodations-spotlight">
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-ruler.svg" alt="">
+                        Área Útil
+                     </div>
 
-                     <label for="">
-                        Sobrenome
-                        <input type="text">
-                     </label>
-                  </div>
-
-                  <label>
-                     Telefone
-                     <input type="text">
+                     <input type="text" name="" id="">
                   </label>
 
-                  <label>
-                     E-mail
-                     <input type="email">
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-bed.svg" alt="">
+                        Quartos
+                     </div>
+
+                     <input type="text" name="" id="">
                   </label>
 
-                  <label>
-                     Senha
-                     <input type="password">
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-shower.svg" alt="">
+                        Banheiros
+                     </div>
+
+                     <input type="text" name="" id="">
                   </label>
 
-                  <label>
-                     Confirme a senha
-                     <input type="password">
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-car.svg" alt="">
+                        Vagas de Garagem
+                     </div>
+
+                     <input type="text" name="" id="">
                   </label>
 
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-building-black.svg" alt="">
+                        Andar
+                     </div>
 
+                     <input type="text" name="" id="">
+                  </label>
+
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-paw.svg" alt="">
+                        Animais de estimação
+                     </div>
+
+                     <input type="text" name="" id="">
+                  </label>
+
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-couch.svg" alt="">
+                        Mobília
+                     </div>
+
+                     <input type="text" name="" id="">
+                  </label>
+
+                  <label class="label">
+                     <div class="has-icon">
+                        <img src="./assets/images/icon-bus.svg" alt="">
+                        Transporte Público
+                     </div>
+
+                     <input type="text" name="" id="">
+                  </label>
                </div>
 
             </fieldset>
 
-            <button type="submit" class="btn submit">Atualizar</button>
-         </div>
+            <fieldset>
+               <legend class="title">Principais comodidades</legend>
 
-         <div class="ads" data-profile="ads">
-            <h1 class="title-big">Todos os anúncios</h1>
+               <div class="form-group">
+                  <label class="label">
+                     Adicionados
+                     <input type="text" name="" id="">
+                  </label>
 
-            <ul class="ads-list">
-               <li class="ads-item">
-
-                  <div class="swiper ads-swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
-                  </div>
-
-                  <a href="#" class="ads-info">
-                     <p class="ads-category">chácara</p>
-                     <h4 class="ads-title">Recanto Remape</h4>
-                     <p class="ads-city">Maringá-PR</p>
-
-                     <ul class="ads-benefits">
-                        <li>Churrasqueira</li>
-                        <li>Estacionamento</li>
-                        <li>Sala de TV</li>
+                  <label class="label">
+                     Opções para adicionar
+                     
+                     <ul class="suggestions">
+                        <li class="suggestions-item">
+                           <button type="button">Opção 01</button>
+                        </li>
+                        <li class="suggestions-item">
+                           <button type="button">Opção 01</button>
+                        </li>
+                        <li class="suggestions-item">
+                           <button type="button">Opção 01</button>
+                        </li>
                      </ul>
+                     
+                  </label>
+               </div>
 
-                     <div class="ads-investment">
-                        <h3 class="ads-price">R$600</h3>
-                        /diária
-                     </div>
-
-                     <span class="ads-favorite">
-                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
-                     </span>
-
-                  </a>
-               </li>
-               <li class="ads-item">
-
-                  <div class="swiper ads-swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
-                  </div>
-
-                  <a href="#" class="ads-info">
-                     <p class="ads-category">chácara</p>
-                     <h4 class="ads-title">Recanto Remape</h4>
-                     <p class="ads-city">Maringá-PR</p>
-
-                     <ul class="ads-benefits">
-                        <li>Churrasqueira</li>
-                        <li>Estacionamento</li>
-                        <li>Sala de TV</li>
-                     </ul>
-
-                     <div class="ads-investment">
-                        <h3 class="ads-price">R$600</h3>
-                        /diária
-                     </div>
-
-                     <span class="ads-favorite">
-                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
-                     </span>
-
-                  </a>
-               </li>
-               <li class="ads-item">
-
-                  <div class="swiper ads-swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
-                  </div>
-
-                  <a href="#" class="ads-info">
-                     <p class="ads-category">chácara</p>
-                     <h4 class="ads-title">Recanto Remape</h4>
-                     <p class="ads-city">Maringá-PR</p>
-
-                     <ul class="ads-benefits">
-                        <li>Churrasqueira</li>
-                        <li>Estacionamento</li>
-                        <li>Sala de TV</li>
-                     </ul>
-
-                     <div class="ads-investment">
-                        <h3 class="ads-price">R$600</h3>
-                        /diária
-                     </div>
-
-                     <span class="ads-favorite">
-                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
-                     </span>
-
-                  </a>
-               </li>
-               <li class="ads-item">
-
-                  <div class="swiper ads-swiper">
-                     <div class="swiper-wrapper">
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                        <div class="swiper-slide">
-                           <img src="./assets/images/swiper-cover.svg" alt="swiper image">
-                        </div>
-                     </div>
-                     <div class="swiper-pagination"></div>
-                  </div>
-
-                  <a href="#" class="ads-info">
-                     <p class="ads-category">chácara</p>
-                     <h4 class="ads-title">Recanto Remape</h4>
-                     <p class="ads-city">Maringá-PR</p>
-
-                     <ul class="ads-benefits">
-                        <li>Churrasqueira</li>
-                        <li>Estacionamento</li>
-                        <li>Sala de TV</li>
-                     </ul>
-
-                     <div class="ads-investment">
-                        <h3 class="ads-price">R$600</h3>
-                        /diária
-                     </div>
-
-                     <span class="ads-favorite">
-                        <img src="./assets/images/icon-heart.svg" alt="heart icon" class="icon">
-                     </span>
-
-                  </a>
-               </li>
-            </ul>
-         </div>
-
-
-      </form>
-
+            </fieldset>
+         </form>
+      </div>
    </main>
+
 
    <footer>
       <dialog class="dialog popup" data-dialog="profile-popup">

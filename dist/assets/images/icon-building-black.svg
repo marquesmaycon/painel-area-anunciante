@@ -1,0 +1,17 @@
+<svg width="23" height="26" viewBox="0 0 23 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1 25L22 25" stroke="#404041" stroke-width="2" stroke-linecap="round"/>
+<line x1="2" y1="1" x2="21" y2="1" stroke="#404041" stroke-width="2" stroke-linecap="round"/>
+<line x1="4" y1="2" x2="4" y2="25" stroke="#404041" stroke-width="2"/>
+<line x1="19" y1="2" x2="19" y2="25" stroke="#404041" stroke-width="2"/>
+<rect x="6.5" y="5.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="6.5" y="10.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="11" y="5.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="11" y="10.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="15.5" y="5.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="15.5" y="10.5" width="1" height="1" fill="black" stroke="#404041"/>
+<rect x="15.5" y="15.5" width="1" height="1" fill="black" stroke="#404041"/>
+<mask id="path-12-inside-1_2028_5" fill="white">
+<path d="M6 16C6 15.4477 6.44772 15 7 15H13C13.5523 15 14 15.4477 14 16V26H6V16Z"/>
+</mask>
+<path d="M6 16C6 15.4477 6.44772 15 7 15H13C13.5523 15 14 15.4477 14 16V26H6V16Z" stroke="#404041" stroke-width="4" mask="url(#path-12-inside-1_2028_5)"/>
+</svg>

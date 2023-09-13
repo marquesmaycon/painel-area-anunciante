@@ -915,6 +915,17 @@ fieldset legend {
   position: static;
 }
 
+.accommodations input {
+  margin-block-start: 10px;
+}
+.accommodations-spotlight {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+}
+.accommodations-spotlight .icon {
+  width: 35px;
+}
+
 .instructions {
   padding: 44px 65px;
   margin-block-end: 80px;
@@ -1070,4 +1081,35 @@ table tbody .icon {
   width: 22px;
 }
 
+.suggestions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  height: 140px;
+  margin-block-start: 10px;
+  padding: 20px 30px;
+  color: var(--netra-escura);
+  font-weight: 500;
+  border-radius: var(--radius1);
+  background: #FFF;
+  overflow-y: auto;
+}
+.suggestions-item {
+  padding: 12px 20px;
+  border-radius: 3px;
+  background-color: #F9ECEC;
+  cursor: pointer;
+  transition: all 200ms ease;
+}
+.suggestions-item:is(:hover, :focus-visible) {
+  background-color: #edc5c5;
+}
+.suggestions-item button {
+  color: #D92229;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19.985px;
+  letter-spacing: -0.476px;
+}
 /*# sourceMappingURL=style.css.map */
