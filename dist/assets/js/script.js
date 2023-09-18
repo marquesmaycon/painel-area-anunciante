@@ -1,3 +1,5 @@
+import { tagIt } from "./tagfy.js"
+
 tinymce.init({
    selector: ".text-mce"
 })
@@ -97,18 +99,20 @@ profileSectionBtns.forEach(btn => {
 const addValorBtn = document.querySelector("[data-add-valor]")
 
 const addCampoValor = function (ev) {
-   const campo = ev.target.previousElementSibling.querySelector("input")
-   if (campo.value == "") {
-      const msg = ev.target.previousElementSibling.querySelector("b")
+   const titleInput = ev.target.previousElementSibling.querySelector("input")
+   const msg = ev.target.previousElementSibling.querySelector("b")
+
+   if (!isModalTitleValid(titleInput)) {
       msg.textContent = "(Insira um título com 3+ caracteres)"
-      return
+      return;
    }
+
    const valoresContainer = document.querySelector("[data-valores-container]")
    const newElement = document.createElement("label")
    newElement.classList.add("label", "cifrao")
 
    newElement.innerHTML = `
-      ${campo.value}
+      ${titleInput.value}
       <button type="button" class="btn-dynamic delete">
          <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
          Excluir
@@ -118,8 +122,10 @@ const addCampoValor = function (ev) {
    valoresContainer.appendChild(newElement)
 
    closeModal(ev)
-   campo.value = ""
+   titleInput.value = ''
+   msg.textContent = ''
 }
+
 if (addValorBtn) {
    addValorBtn.addEventListener("click", addCampoValor)
 }
@@ -264,9 +270,9 @@ if (inputPhotos) {
    inputPhotos.addEventListener("change", ev => {
       const files = ev.target.files
       if (!files) return
-   
+
       const photosMsg = document.querySelector("[data-photos-msg]")
-   
+
       photosMsg.classList.add("active")
       photosMsg.textContent = ""
       for (i = 0; i < files.length; i++) {
@@ -304,8 +310,7 @@ const uploadPhotos = function () {
    }
 }
 if (photosSubmit) {
-photosSubmit.addEventListener("click", uploadPhotos)
-   
+   photosSubmit.addEventListener("click", uploadPhotos)
 }
 
 // foto destaque
@@ -342,6 +347,72 @@ if (formAccommodations) {
    })
 }
 
+const isModalTitleValid = function (inputEl) {
+   const inputValue = inputEl.value.trim()
+   return inputValue.length >= 3
+}
+
+const addCmddBtn = document.querySelector("[data-add-comodidade]")
+
+const addCampoAreaCmdd = function (ev) {
+   const titleInput = ev.target.previousElementSibling.querySelector("input")
+   const msg = ev.target.previousElementSibling.querySelector("b")
+
+   if (!isModalTitleValid(titleInput)) {
+      msg.textContent = "(Insira um título com 3+ caracteres)"
+      return;
+   }
+
+   const areasCmddContainer = document.querySelector("[data-areacmdd-container]")
+   let cmddAreaLength = areasCmddContainer.querySelectorAll("[data-accommodation-item]").length
+   cmddAreaLength++
+
+   const newElement = document.createElement("li")
+   newElement.classList.add("accommodation-item")
+   newElement.setAttribute("data-accommodation-item", "")
+   newElement.innerHTML = `
+      <div class="title has-btn">
+         <div class="has-icon">
+            <span data-collapse="accommodation">${titleInput.value}</span>
+
+            <button type="button" class="btn-dynamic delete" data-delete-field="[data-accommodation-item]">
+               <img src="./assets/images/icon-trash-can.svg" alt="trash-can icon" class="icon">
+               Excluir
+            </button>
+         </div>
+
+         <button type="button" data-collapse="accommodation">
+            <img src="./assets/images/icon-chevron-up.svg" alt="seta pra cima" class="icon rotate no-events">
+         </button>
+      </div>
+
+      <div class="collapse-content">
+         <div class="collapse-hide">
+            <div class="form-group tags">
+
+               <div class="tags-container">
+                  <span class="label">Adicionados</span>
+                  <input type="text" name="areacmdd[${cmddAreaLength}]" class="custom-tagify" placeholder="liste as comodidades aqui..." autofocus3>
+               </div>
+               
+            </div>
+         </div>
+      </div>
+   `
+   areasCmddContainer.appendChild(newElement)
+   newElement.querySelector("span").click()
+
+   const tagsInput = newElement.querySelector("input")   
+   tagIt(tagsInput)
+
+   closeModal(ev)
+   msg.textContent = ""
+   titleInput.value = ""
+}
+
+if (addCmddBtn) {
+   addCmddBtn.addEventListener("click", addCampoAreaCmdd)
+}
 
 // swiper
 if (document.querySelector(".ads-swiper")) {

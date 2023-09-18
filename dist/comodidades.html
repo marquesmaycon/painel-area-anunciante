@@ -22,8 +22,8 @@
    <!-- scripts -->
    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js" defer></script>
-   <script src="./assets/js/script.js" defer></script>
-   <script src="./assets/js/tagfy.js" defer></script>
+   <script type="module" src="./assets/js/script.js" defer></script>
+   <script type="module" src="./assets/js/tagfy.js" defer></script>
    <title>Comodidades</title>
    
 </head>
@@ -92,7 +92,7 @@
                   </a>
                </li>
                <li>
-                  <a href="#" class="navbar-link active">
+                  <a href="./comodidades.html" class="navbar-link active">
                      <img src="./assets/images/icon-bathtub.svg" alt="ícone" class="icon">
                      Comodidades
                   </a>
@@ -360,7 +360,7 @@
 
                   <div class="tags-container">
                      <span class="label">Adicionados</span>
-                     <input type="text" name="principaiscomodidades" class="custom-tagify" value="tag1, tag2 autofocus">
+                     <input type="text" name="principaiscomodidades" class="custom-tagify" value="tag1, tag2" placeholder="liste as comodidades aqui...">
                   </div>
                   
                </div>
@@ -370,8 +370,9 @@
             <fieldset>
                <legend class="title">Comodidades por área</legend>
 
-               <ul>
+               <ul data-areacmdd-container>
                   <li class="accommodation-item" data-accommodation-item>
+
                      <div class="title has-btn">
                         <div class="has-icon">
                            <span data-collapse="accommodation">Cozinha</span>
@@ -387,24 +388,22 @@
                         </button>
                      </div>
       
-                     <div class="collapse-content">                        
+                     <div class="collapse-content">
                         <div class="collapse-hide">
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
-                           tagify <br>
+                           <div class="form-group tags">
+
+                              <div class="tags-container">
+                                 <span class="label">Adicionados</span>
+                                 <input type="text" name="areacmdd[]" class="custom-tagify" value="tag1, tag2" placeholder="liste as comodidades aqui...">
+                              </div>
+                              
+                           </div>
                         </div>
-                     </div>        
-      
+                     </div>
+
                   </li>                  
                </ul>
+
             </fieldset>
 
             <button type="button" class="btn-dynamic add" data-dialog-btn data-target="adicionar-campo">
@@ -430,7 +429,7 @@
             <input type="text" name="titulo-campo" placeholder="ex: da Silva">
          </label>
 
-         <button type="button" class="btn submit" data-add-valor>Adicionar</button>
+         <button type="button" class="btn submit" data-add-comodidade>Adicionar</button>
       </div>
    </dialog>
 
